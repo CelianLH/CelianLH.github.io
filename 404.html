@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0099CC">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0099CC">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>404 - 页面未找到 - John's Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="alternate" type="application/rss+xml" title="John's Blog" href="/">
+    <style type="text/css">
+    body {
+        background-color: #0099CC;
+        color: #FFFFFF;
+        line-height: 1.428571429;
+        margin-left: 100px;
+    }
+    .face {
+        font-size: 100px;
+    }
+    a{
+        color:rgba(255, 255, 255,0.8);
+    }
+    p{
+        font-size: 24px;
+        padding: 8px;
+        line-height: 40px;
+    }
+    .tips {
+        font-size: 16px
+    }
+    /*针对小屏幕的优化*/
+    @media screen and (max-width: 600px) {
+        body{
+            margin: 0 10px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .tips {
+            display: inline-block;
+            padding-top: 10px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <script>
+    var i = 10;  //这里是倒计时的秒数
+    var intervalid;
+    intervalid = setInterval("cutdown()", 1000);
+    function cutdown() {
+        if (i == 0) {
+          window.location.href = "/"; //倒计时完成后跳转的地址
+            clearInterval(intervalid);
+        }
+        document.getElementById("mes").innerHTML = i;
+        i--;
+    }
+    window.onload = cutdown;
+    </script>
+    <span class="face">:(</span>
+    <p>您访问的页面没有找到。<br>
+        <span id="mes"></span> 秒后转至首页，您可以试着找找您所需要的信息。<br>
+        <span class="tips">如果您想继续，则可以:<br><a href="/">返回主页</a><br><a href="#" onclick="window.history.back(); return false;">返回前一页</a></span>
+    </p>
+</body>
+</html>
